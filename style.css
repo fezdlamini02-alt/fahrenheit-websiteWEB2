@@ -80,6 +80,24 @@ nav a:hover {
   padding: 40px;
 }
 
+.menu-search,
+#menu-search,
+.menu-empty {
+  grid-column: 1 / -1;
+}
+
+#menu-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 .menu-item {
   background-color: #f0f8ff;
   border: 1px solid #ddd;
@@ -147,6 +165,38 @@ button:hover, .btn:hover {
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.page-form {
+  min-height: 65vh;
+}
+
+.page-form form {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 560px);
+  margin: 24px auto 0;
+  text-align: left;
+}
+
+.page-form form input,
+.page-form form select,
+.page-form form textarea {
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.page-form form button {
+  justify-self: start;
+}
+
+[data-form-status] {
+  min-height: 1.6em;
+  margin: 0;
 }
 
 /* ================================

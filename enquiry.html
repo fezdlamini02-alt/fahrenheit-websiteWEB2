@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiries | Fahrenheit Seafood and Grill</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Fahrenheit Seafood and Grill</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#reservation">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact page-form">
+    <h2>Make an Enquiry</h2>
+    <p>Tell us what you would like to know about our food, services, or sponsorship opportunities.</p>
+    <form data-validated-form data-success-message="Your enquiry is ready, but online submission is not set up. Please email us directly.">
+      <label for="enquiry-name">Your name</label>
+      <input id="enquiry-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="enquiry-email">Email address</label>
+      <input id="enquiry-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="enquiry-type">Enquiry type</label>
+      <select id="enquiry-type" name="enquiryType" required>
+        <option value="" selected disabled>Select an enquiry type</option>
+        <option value="menu">Menu or products</option>
+        <option value="services">Restaurant services or events</option>
+        <option value="sponsorship">Sponsorship</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="enquiry-message">How can we help?</label>
+      <textarea id="enquiry-message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Enquiry</button>
+      <p data-form-status role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fahrenheit Seafood and Grill. All rights reserved.</p>
+  </footer>
+</body>
+</html>

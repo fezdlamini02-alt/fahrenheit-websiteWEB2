@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Fahrenheit Seafood and Grill</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Fahrenheit Seafood and Grill</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#reservation">Reservations</a></li>
+        <li><a href="enquiry.html">Enquiries</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact page-form">
+    <h2>Contact Us</h2>
+    <p>12 Van Riebeeck Avenue, Edenvale, Gauteng</p>
+    <p><a href="tel:+27115551234">+27 11 555 1234</a> | <a href="mailto:info@fahrenheitseafood.co.za">info@fahrenheitseafood.co.za</a></p>
+
+    <form data-validated-form data-success-message="Your message is ready, but online submission is not set up. Please email us directly.">
+      <label for="contact-name">Your name</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="contact-email">Email address</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="contact-subject">Subject</label>
+      <input id="contact-subject" name="subject" type="text" required>
+
+      <label for="contact-message">Your message</label>
+      <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+      <p data-form-status role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fahrenheit Seafood and Grill. All rights reserved.</p>
+  </footer>
+</body>
+</html>
