@@ -71,4 +71,12 @@ The website has been deployed on **Netlify** with HTTPS enabled.
 Repository link: [GitHub Repo](https://github.com/fezdlamini02-alt/fahrenheit-websiteWEB2)  
 Live site link: [Netlify URL](https://fahrenheit-websiteweb.netlify.app/)
 
+## References
+- Cherukuri, B.R. (2024). Progressive web apps (PWAs): Enhancing user experience through modern web development. International Journal of Science and Research, 13(10), 1550–1560. doi:10.21275/SR2410131550
+- Krug, S. (2014). Don’t Make Me Think: A Common-Sense Approach to Web Usability (3rd ed.). Berkeley, CA: New Riders.
+- Nielsen, J. (2012). Usability Engineering. San Francisco, CA: Morgan Kaufmann.
+- Ricci, I.D. & Rahman, F.A. (2025). Improving web development through strategic web framework adoption. International Journal of Modern Computer Science and IT Innovations, 2(5), 1–6. doi:10.55640/ijmcsit-v02i05-01
+- Springer Nature. (2025). Integrating accessibility, usability, and UX in web project management: A systematic review. Universal Access in the Information Society, 24(3), 455–472. doi:10.1007/s10209-025-01024-7
+
+
 
