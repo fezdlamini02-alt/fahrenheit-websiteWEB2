@@ -69,6 +69,6 @@ This project was built to demonstrate front-end web design and layout skills for
 ## Deployment
 The website has been deployed on **Netlify** with HTTPS enabled.  
 Repository link: [GitHub Repo](https://github.com/fezdlamini02-alt/fahrenheit-websiteWEB2)  
-Live site link: (insert your Netlify URL here once deployed)
+Live site link: [Netlify URL](https://fahrenheit-websiteweb.netlify.app/)
 
 
