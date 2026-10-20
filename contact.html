@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Fahrenheit Seafood and Grill</title>
+  <meta name="description" content="Contact Fahrenheit Seafood and Grill in Edenvale, Gauteng, or send us a message.">
+  <meta name="theme-color" content="#008080">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -26,7 +29,8 @@
     <p>12 Van Riebeeck Avenue, Edenvale, Gauteng</p>
     <p><a href="tel:+27115551234">+27 11 555 1234</a> | <a href="mailto:info@fahrenheitseafood.co.za">info@fahrenheitseafood.co.za</a></p>
 
-    <form data-validated-form data-success-message="Your message is ready, but online submission is not set up. Please email us directly.">
+    <form name="contact" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your message has been sent.">
+      <input type="hidden" name="form-name" value="contact">
       <label for="contact-name">Your name</label>
       <input id="contact-name" name="name" type="text" autocomplete="name" required>
 
@@ -43,6 +47,18 @@
       <p data-form-status role="status" aria-live="polite"></p>
     </form>
   </main>
+
+  <section class="map-section" aria-labelledby="map-heading">
+    <h2 id="map-heading">Find Us</h2>
+    <iframe
+      title="Map showing Fahrenheit Seafood and Grill in Edenvale, Gauteng"
+      src="https://www.google.com/maps?q=12%20Van%20Riebeeck%20Avenue%2C%20Edenvale%2C%20Gauteng&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=12%20Van%20Riebeeck%20Avenue%2C%20Edenvale%2C%20Gauteng" target="_blank" rel="noopener noreferrer">Open directions in Google Maps</a></p>
+  </section>
 
   <footer>
     <p>&copy; 2026 Fahrenheit Seafood and Grill. All rights reserved.</p>

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enquiries | Fahrenheit Seafood and Grill</title>
+  <meta name="description" content="Ask Fahrenheit Seafood and Grill about our menu, restaurant services, events, or sponsorship opportunities.">
+  <meta name="theme-color" content="#008080">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -24,7 +27,8 @@
   <main class="contact page-form">
     <h2>Make an Enquiry</h2>
     <p>Tell us what you would like to know about our food, services, or sponsorship opportunities.</p>
-    <form data-validated-form data-success-message="Your enquiry is ready, but online submission is not set up. Please email us directly.">
+    <form name="enquiry" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your enquiry has been sent.">
+      <input type="hidden" name="form-name" value="enquiry">
       <label for="enquiry-name">Your name</label>
       <input id="enquiry-name" name="name" type="text" autocomplete="name" required>
 

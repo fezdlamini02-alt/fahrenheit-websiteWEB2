@@ -9,64 +9,47 @@ Student Number: ST10506754
 
 ## Project Overview
 
-This project showcases a seafood restaurant website with a modern layout, hero section, menu highlights, and restaurant imagery.
+The site presents the restaurant's seafood menu, gallery, contact details, reservation form, and enquiry form.
 
-## Files Included
+## Files
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `enquiry.html`
-- `contact.html`
-- `Images/`
+- `index.html` — home page, menu, gallery, FAQs, reservation, and contact form
+- `contact.html` — contact details, contact form, and embedded map
+- `enquiry.html` — enquiry form
+- `style.css` — responsive styling and reduced-motion-aware transitions
+- `script.js` — menu loading/search, form submission, FAQ accordion, lightbox, and reveal animations
+- `menu.json` — menu content
+- `robots.txt` and `sitemap.xml` — search engine crawl/indexing files
+- `Images/` — optimized restaurant and menu images
 
-## Technologies Used
+## Functionality
+
+- Menu cards load from `menu.json`; the search filters by dish name, category, and description.
+- Gallery images open in an accessible dialog lightbox with keyboard dismissal.
+- FAQ entries expand and collapse with buttons that expose their expanded state to assistive technology.
+- Forms validate in the browser and submit asynchronously through Netlify Forms.
+- Reservation dates cannot be set in the past.
+- The contact page embeds a Google Maps location map without requiring a Maps API key.
+- Navigation, button, gallery, and section reveal transitions include reduced-motion support.
+- Non-critical images load lazily; image assets are resized and recompressed where that reduces file size.
+- `robots.txt` and `sitemap.xml` identify the public Netlify pages for search engines.
+
+## Forms and Deployment
+
+The site is hosted on Netlify. Netlify Forms receives reservation, contact, and enquiry submissions; review submissions in the site's Netlify dashboard. Form submission requires a successful Netlify deployment with form detection enabled. When testing from a local static file or server, the forms cannot be delivered to Netlify.
+
+Menu loading uses `fetch`, so run the site through a web server or the deployed site rather than opening `index.html` directly as a `file:` URL.
+
+## Technologies
 
 - HTML
 - CSS
 - JavaScript
-
-## 2. Functionality
-
-### 2.1 Interactive Elements
-
-- Accordion menu added for FAQs using JavaScript.
-- Lightbox gallery implemented for dish images.
-- Smooth animations applied to buttons and navigation links.
-- Google Maps API integrated on the contact page.
-
-### 2.2 Dynamic Content
-
-- Menu items dynamically loaded from JSON for easier updates.
-- Search filter added to menu page, allowing users to find dishes by name or category.
-- Enquiry and contact forms validated with JavaScript before submission.
-
-> Current implementation: Menu search, browser-side form validation, and reservation date restriction are active. FAQ accordion, gallery lightbox, animations, Google Maps, and JSON-driven menu features are not connected to the current page markup or services.
-
-## Notes
-
-This project was built to demonstrate front-end web design and layout skills for a restaurant brand.
-Form validation and menu search run in the browser. Form submissions are not connected to a server yet.
-
-## Changelog (Part 3)
-
-- Improved navigation spacing and hover effects for clearer user experience.
-- Increased text contrast in the hero section to enhance readability and accessibility.
-- Added descriptive alt text to all gallery images for SEO and accessibility compliance.
-- Refined CSS breakpoints to improve responsiveness on tablets and mobile devices.
-- Implemented JavaScript accordion for FAQs and lightbox functionality for gallery images.
-- Added dynamic menu loading from JSON and search filter for menu items.
-- Integrated Google Maps API on the contact page for location visibility.
-- Created `enquiry.html` form with validation for services, products, and sponsorship enquiries.
-- Created `contact.html` form with validation for general customer messages.
-- Applied AJAX submission for smoother form handling without page reload.
-- Configured `robots.txt` and `sitemap.xml` for SEO indexing and site structure.
-- Optimized page speed by compressing images and minifying CSS/JS files.
-- Updated README with Part 3 details, including deployment notes and references.
+- JSON
+- Netlify Forms
+- Google Maps embed
 
 ## Deployment
 
-The website has been deployed on Netlify with HTTPS enabled.
-
-- Repository: [GitHub Repo](https://github.com/fezdlamini02-alt/fahrenheit-websiteWEB2)
-- Live site: [Netlify](https://fahrenheit-websiteweb.netlify.app/)
+- Repository: [GitHub repository](https://github.com/fezdlamini02-alt/fahrenheit-websiteWEB2)
+- Live site: [Netlify deployment](https://fahrenheit-websiteweb.netlify.app/)

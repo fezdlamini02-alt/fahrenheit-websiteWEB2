@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahrenheit Seafood and Grill</title>
+  <meta name="description" content="Discover fresh seafood, explore the menu, and book a table at Fahrenheit Seafood and Grill in Edenvale, Gauteng.">
+  <meta name="theme-color" content="#008080">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -26,45 +29,62 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h2>Fresh Seafood, Modern Dining</h2>
+    <h2 data-reveal>Fresh Seafood, Modern Dining</h2>
   </section>
 
   <!-- MENU SECTION -->
   <section id="menu" class="menu">
+    <h2 class="section-heading" data-reveal>Our Menu</h2>
     <label class="menu-search" for="menu-search">Search the menu</label>
-    <input id="menu-search" data-menu-search type="search" placeholder="Search dishes or ingredients">
+    <input id="menu-search" data-menu-search type="search" placeholder="Search dishes or ingredients" aria-controls="menu-list">
+    <p class="menu-status" data-menu-status role="status" aria-live="polite">Loading menu...</p>
     <p class="menu-empty" data-menu-empty hidden>No menu items match your search.</p>
-    <div class="menu-item" data-menu-item>
-      <img src="Images/seafood_platter.jpg" alt="Seafood Platter">
-      <h3>Seafood Platter</h3>
-      <p>R250 — Fresh prawns, mussels, and calamari.</p>
-      <a href="#reservation" class="btn">Order Now</a>
-    </div>
-    <div class="menu-item" data-menu-item>
-      <img src="Images/grilled_salmon.jpg" alt="Grilled Salmon">
-      <h3>Grilled Salmon</h3>
-      <p>R180 — Served with seasonal vegetables.</p>
-      <a href="#reservation" class="btn">Order Now</a>
-    </div>
-    <div class="menu-item" data-menu-item>
-      <img src="Images/calamari_rings.jpg" alt="Calamari Rings">
-      <h3>Calamari Rings</h3>
-      <p>R120 — Crispy golden calamari with tartar sauce.</p>
-      <a href="#reservation" class="btn">Order Now</a>
-    </div>
+    <div id="menu-list" class="menu-list" data-menu-list aria-live="polite"></div>
   </section>
 
   <!-- GALLERY SECTION -->
   <section id="gallery" class="gallery">
-    <img src="Images/restaurant_interior.jpg" alt="Restaurant Interior">
-    <img src="Images/chef_preparing.jpg" alt="Chef Preparing Seafood">
-    <img src="Images/seafood_platter.jpg" alt="Seafood platter served at the restaurant">
+    <h2 class="section-heading" data-reveal>Gallery</h2>
+    <button class="gallery-item" type="button" aria-label="View restaurant interior">
+      <img src="Images/restaurant_interior.jpg" alt="Restaurant Interior" loading="lazy" decoding="async">
+    </button>
+    <button class="gallery-item" type="button" aria-label="View chef preparing seafood">
+      <img src="Images/chef_preparing.jpg" alt="Chef Preparing Seafood" loading="lazy" decoding="async">
+    </button>
+    <button class="gallery-item" type="button" aria-label="View seafood platter">
+      <img src="Images/seafood_platter.jpg" alt="Seafood platter served at the restaurant" loading="lazy" decoding="async">
+    </button>
+  </section>
+
+  <section id="faqs" class="faqs">
+    <h2 data-reveal>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-hours">What are your opening hours?</button></h3>
+        <div class="faq-answer" id="faq-answer-hours" hidden>
+          <p>Please call us on <a href="tel:+27115551234">+27 11 555 1234</a> to confirm today's opening hours.</p>
+        </div>
+      </article>
+      <article class="faq-item">
+        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-booking">How do I book a table?</button></h3>
+        <div class="faq-answer" id="faq-answer-booking" hidden>
+          <p>Use the reservation form below. We will contact you to confirm your booking.</p>
+        </div>
+      </article>
+      <article class="faq-item">
+        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-enquiries">Can I ask about events or sponsorship?</button></h3>
+        <div class="faq-answer" id="faq-answer-enquiries" hidden>
+          <p>Yes. Send the details through our <a href="enquiry.html">enquiry form</a>.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- RESERVATION SECTION -->
   <section id="reservation" class="contact">
     <h2>Make a Reservation</h2>
-    <form id="reservation-form" data-validated-form data-success-message="Your reservation details are ready, but online submission is not set up. Please call us to confirm your booking.">
+    <form id="reservation-form" name="reservation" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your reservation request has been sent. We will contact you to confirm.">
+      <input type="hidden" name="form-name" value="reservation">
       <input type="text" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
       <input type="email" name="email" autocomplete="email" placeholder="Your Email" aria-label="Your email" required>
       <input type="date" name="date" aria-label="Reservation date" data-no-past-date required>
@@ -80,7 +100,8 @@
     <p>📍 12 Van Riebeeck Avenue, Edenvale, Gauteng</p>
     <p>📞 +27 11 555 1234</p>
     <p>📧 info@fahrenheitseafood.co.za</p>
-    <form id="contact-form" data-validated-form data-success-message="Your message is ready, but online submission is not set up. Please email us directly.">
+    <form id="contact-form" name="home-contact" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your message has been sent.">
+      <input type="hidden" name="form-name" value="home-contact">
       <input type="text" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
       <input type="email" name="email" autocomplete="email" placeholder="Your Email" aria-label="Your email" required>
       <textarea name="message" placeholder="Your Message" rows="4" aria-label="Your message" required></textarea>

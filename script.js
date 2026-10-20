@@ -1,38 +1,133 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  // Menu Search Filter
   const menuSearch = document.querySelector('[data-menu-search]');
-  const menuItems = document.querySelectorAll('[data-menu-item]');
+  const menuList = document.querySelector('[data-menu-list]');
+  const menuItems = [];
   const emptyMenuMessage = document.querySelector('[data-menu-empty]');
+  const menuStatus = document.querySelector('[data-menu-status]');
 
-  if (menuSearch) {
-    menuSearch.addEventListener('input', () => {
-      const query = menuSearch.value.toLowerCase();
-      let visible = 0;
+  const filterMenu = () => {
+    const query = menuSearch.value.trim().toLowerCase();
+    let visible = 0;
 
-      menuItems.forEach(item => {
-        const match = item.textContent.toLowerCase().includes(query);
-        item.hidden = !match;
-        if (match) visible++;
-      });
-
-      if (emptyMenuMessage) emptyMenuMessage.hidden = visible > 0;
+    menuItems.forEach(item => {
+      const matches = item.textContent.toLowerCase().includes(query);
+      item.hidden = !matches;
+      if (matches) visible++;
     });
+
+    if (emptyMenuMessage) emptyMenuMessage.hidden = visible > 0;
+  };
+
+  if (menuSearch && menuList && menuStatus) {
+    menuSearch.addEventListener('input', filterMenu);
+
+    fetch('menu.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Menu request failed with status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(items => {
+        if (!Array.isArray(items)) {
+          throw new TypeError('Menu data must be a JSON array');
+        }
+
+        items.forEach(item => {
+          if (
+            typeof item.name !== 'string' ||
+            typeof item.category !== 'string' ||
+            typeof item.description !== 'string' ||
+            typeof item.image !== 'string' ||
+            typeof item.alt !== 'string' ||
+            typeof item.price !== 'number' ||
+            !Number.isFinite(item.price)
+          ) {
+            throw new TypeError('Menu item is missing valid required fields');
+          }
+        });
+
+        items.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'menu-item';
+
+          const image = document.createElement('img');
+          image.src = item.image;
+          image.alt = item.alt;
+          image.loading = 'lazy';
+          image.decoding = 'async';
+
+          const name = document.createElement('h3');
+          name.textContent = item.name;
+
+          const category = document.createElement('p');
+          category.className = 'menu-category';
+          category.textContent = item.category;
+
+          const description = document.createElement('p');
+          description.textContent = `R${item.price} — ${item.description}`;
+
+          const orderLink = document.createElement('a');
+          orderLink.href = '#reservation';
+          orderLink.className = 'btn';
+          orderLink.textContent = 'Order Now';
+
+          card.append(image, name, category, description, orderLink);
+          menuList.append(card);
+          menuItems.push(card);
+        });
+
+        menuStatus.hidden = true;
+        filterMenu();
+      })
+      .catch(error => {
+        console.error('Unable to load the menu:', error);
+        menuStatus.textContent = 'The menu could not be loaded. Please refresh the page to try again.';
+      });
   }
-  // Form Validation
+
   document.querySelectorAll('form[data-validated-form]').forEach(form => {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const status = form.querySelector('[data-form-status]');
+      const submitButton = form.querySelector('[type="submit"]');
+      const formName = form.querySelector('[name="form-name"]')?.value;
+
+      if (!formName || !form.hasAttribute('data-netlify')) {
+        if (status) status.textContent = 'This form is not configured for online submission.';
+        console.error('Form submission is missing its Netlify form configuration.');
         return;
       }
-      const status = form.querySelector('[data-form-status]');
-      if (status) status.textContent = form.dataset.successMessage || 'Form is valid!';
+
+      const formData = new FormData(form);
+      formData.set('form-name', formName);
+      if (submitButton) submitButton.disabled = true;
+      if (status) status.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error(`Form submission failed with status ${response.status}`);
+        }
+
+        form.reset();
+        if (status) status.textContent = form.dataset.successMessage || 'Your form has been sent.';
+      } catch (error) {
+        console.error('Unable to submit the form:', error);
+        if (status) status.textContent = 'Your form could not be sent. Please try again or contact us by phone or email.';
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   });
 
-  // Date Restriction (no past dates)
   const dateInput = document.querySelector('[data-no-past-date]');
   if (dateInput) {
     const today = new Date();
@@ -40,44 +135,68 @@ document.addEventListener('DOMContentLoaded', () => {
       .toISOString().slice(0, 10);
   }
 
-  // Accordion (FAQs)
-  document.querySelectorAll('.accordion').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      const panel = btn.nextElementSibling;
-      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  document.querySelectorAll('.accordion[aria-controls]').forEach(button => {
+    const panel = document.getElementById(button.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
     });
   });
 
-  // Lightbox Gallery
   const galleryItems = document.querySelectorAll('.gallery-item');
-  if (galleryItems.length) {
-    const lightbox = document.createElement('div');
-    const img = document.createElement('img');
-    Object.assign(lightbox.style, {
-      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.8)', display: 'none',
-      justifyContent: 'center', alignItems: 'center', zIndex: 1000
-    });
-    Object.assign(img.style, { maxWidth: '90%', maxHeight: '90%' });
-    lightbox.appendChild(img);
-    document.body.appendChild(lightbox);
+  if (galleryItems.length && typeof HTMLDialogElement !== 'undefined') {
+    const lightbox = document.createElement('dialog');
+    lightbox.className = 'lightbox';
+    lightbox.setAttribute('aria-label', 'Image preview');
 
-    galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
-        img.src = item.src;
-        lightbox.style.display = 'flex';
+    const closeButton = document.createElement('button');
+    closeButton.className = 'lightbox-close';
+    closeButton.type = 'button';
+    closeButton.setAttribute('aria-label', 'Close image preview');
+    closeButton.textContent = '×';
+
+    const image = document.createElement('img');
+    lightbox.append(closeButton, image);
+    document.body.append(lightbox);
+
+    galleryItems.forEach(button => {
+      button.addEventListener('click', () => {
+        const sourceImage = button.querySelector('img');
+        if (!sourceImage) return;
+        image.src = sourceImage.currentSrc || sourceImage.src;
+        image.alt = sourceImage.alt;
+        lightbox.showModal();
       });
     });
-    lightbox.addEventListener('click', () => lightbox.style.display = 'none');
+
+    closeButton.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('cancel', event => {
+      event.preventDefault();
+      lightbox.close();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && lightbox.open) lightbox.close();
+    });
+  }
+
+  const revealItems = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('is-visible'));
   }
 });
-
-// Google Maps API
-function initMap() {
-  const location = { lat: -26.236, lng: 28.369 }; // Brakpan coords
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 15, center: location
-  });
-  new google.maps.Marker({ position: location, map, title: "Fahrenheit Seafood and Grill" });
-}
