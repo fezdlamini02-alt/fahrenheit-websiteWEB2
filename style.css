@@ -210,6 +210,15 @@ footer {
   padding: 15px;
 }
 
+footer a {
+  color: white;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: #ffcc00;
+}
+
 /* ================================
   RESPONSIVE DESIGN
 ================================= */
