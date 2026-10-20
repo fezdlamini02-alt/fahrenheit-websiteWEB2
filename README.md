@@ -41,7 +41,7 @@ This project showcases a seafood restaurant website with a modern layout, hero s
 - Search filter added to menu page, allowing users to find dishes by name or category.
 - Enquiry and contact forms validated with JavaScript before submission.
 
-> Implementation status: Menu search and browser-side form validation are active. The FAQ accordion, lightbox, animations, Google Maps integration, and JSON-driven menu are not implemented in this local project copy yet.
+> Current implementation: Menu search, browser-side form validation, and reservation date restriction are active. FAQ accordion, gallery lightbox, animations, Google Maps, and JSON-driven menu features are not connected to the current page markup or services.
 
 ## Notes
 
