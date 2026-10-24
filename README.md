@@ -24,8 +24,6 @@ assets/
     interior-photo.jpg
     platter-photo.jpg
     salmon-photo.jpg
-  js/
-    script.js
 CHANGELOG.md
 contact.html
 enquiry.html
@@ -33,6 +31,7 @@ index.html
 menu.json
 README.md
 robots.txt
+script.js
 WEDE PART 2
 ```
 
@@ -41,6 +40,7 @@ WEDE PART 2
 ## Functionality
 
 - Menu cards load from `menu.json`; the search filters by dish name, category, and description.
+- `script.js` handles menu loading and search, form submission, reservation-date validation, FAQs, the image lightbox, and reveal animations.
 - Gallery images open in an accessible dialog lightbox with keyboard dismissal.
 - FAQ entries expand and collapse with buttons that expose their expanded state to assistive technology.
 - Forms validate in the browser and submit asynchronously through Netlify Forms.

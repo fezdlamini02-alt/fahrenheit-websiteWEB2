@@ -11,3 +11,4 @@ Notable changes to the Fahrenheit Seafood and Grill website are recorded here.
 - Added project references and documented the missing image attribution metadata.
 - Replaced images with unverified provenance with real Wikimedia Commons photographs and added creator, source, and licence credits.
 - Added accessible descriptions for the photographs and updated all image references.
+- Restored the JavaScript file at the project root and updated page references and documentation.
