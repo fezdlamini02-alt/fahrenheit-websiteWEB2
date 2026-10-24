@@ -45,7 +45,7 @@ WEDE PART 2
 - FAQ entries expand and collapse with buttons that expose their expanded state to assistive technology.
 - Forms validate in the browser and submit asynchronously through Netlify Forms.
 - Reservation dates cannot be set in the past.
-- The contact page embeds a Google Maps location map without requiring a Maps API key.
+- The contact page embeds an OpenStreetMap location map without requiring an API key and links to Google Maps directions.
 - Navigation, button, gallery, and section reveal transitions include reduced-motion support.
 - Non-critical images load lazily; image assets are resized and recompressed where that reduces file size.
 
