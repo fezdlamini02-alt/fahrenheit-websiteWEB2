@@ -55,7 +55,7 @@ The Netlify production site is publicly accessible to anyone who has its URL. Ea
 
 ## Forms and Deployment
 
-The site is hosted on Netlify. Netlify Forms receives reservation, contact, and enquiry submissions; review submissions in the site's Netlify dashboard. Form submission requires a successful Netlify deployment with form detection enabled. When testing from a local static file or server, the forms cannot be delivered to Netlify.
+The site is hosted on Netlify. Reservation, contact, and enquiry forms submit through Netlify Forms when form detection is enabled for the site. In Netlify, open **Forms → Form detection**, enable detection, and redeploy. Confirm submissions in the site's Netlify dashboard. If online submission fails, the form offers a prefilled email link as a fallback; this requires an email application configured on the visitor's device. Forms cannot be delivered to Netlify from a local static server.
 
 Menu loading uses `fetch`, so run the site through a web server or the deployed site rather than opening `index.html` directly as a `file:` URL.
 

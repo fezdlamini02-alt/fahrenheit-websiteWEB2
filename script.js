@@ -121,7 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (status) status.textContent = form.dataset.successMessage || 'Your form has been sent.';
       } catch (error) {
         console.error('Unable to submit the form:', error);
-        if (status) status.textContent = 'Your form could not be sent. Please try again or contact us by phone or email.';
+        if (status) {
+          status.textContent = 'Online submission is unavailable. You can email your details instead: ';
+          const fallbackLink = document.createElement('a');
+          const subject = `${formName} form submission`;
+          const body = Array.from(formData.entries())
+            .filter(([name]) => name !== 'form-name')
+            .map(([name, value]) => `${name}: ${value}`)
+            .join('\n');
+          fallbackLink.href = `mailto:info@fahrenheitseafood.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          fallbackLink.textContent = 'email us';
+          status.append(fallbackLink);
+        }
       } finally {
         if (submitButton) submitButton.disabled = false;
       }
