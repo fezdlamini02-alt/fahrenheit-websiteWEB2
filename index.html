@@ -7,21 +7,21 @@
   <meta name="description" content="Discover fresh seafood, explore the menu, and book a table at Fahrenheit Seafood and Grill in Edenvale, Gauteng.">
   <meta name="theme-color" content="#008080">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
     <h1>Fahrenheit Seafood and Grill</h1>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reservation">Reservations</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="contact.html">Contact Page</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#reservation">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="enquiry.html">Enquiries</a></li>
       </ul>
     </nav>
@@ -46,13 +46,13 @@
   <section id="gallery" class="gallery">
     <h2 class="section-heading" data-reveal>Gallery</h2>
     <button class="gallery-item" type="button" aria-label="View restaurant interior">
-      <img src="Images/restaurant_interior.jpg" alt="Restaurant Interior" loading="lazy" decoding="async">
+      <img src="assets/images/restaurant_interior.jpg" alt="Restaurant Interior" loading="lazy" decoding="async">
     </button>
     <button class="gallery-item" type="button" aria-label="View chef preparing seafood">
-      <img src="Images/chef_preparing.jpg" alt="Chef Preparing Seafood" loading="lazy" decoding="async">
+      <img src="assets/images/chef_preparing.jpg" alt="Chef Preparing Seafood" loading="lazy" decoding="async">
     </button>
     <button class="gallery-item" type="button" aria-label="View seafood platter">
-      <img src="Images/seafood_platter.jpg" alt="Seafood platter served at the restaurant" loading="lazy" decoding="async">
+      <img src="assets/images/seafood_platter.jpg" alt="Seafood platter served at the restaurant" loading="lazy" decoding="async">
     </button>
   </section>
 
@@ -90,22 +90,6 @@
       <input type="date" name="date" aria-label="Reservation date" data-no-past-date required>
       <input type="time" name="time" aria-label="Reservation time" required>
       <button type="submit" class="btn">Book Table</button>
-      <p data-form-status role="status" aria-live="polite"></p>
-    </form>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>📍 12 Van Riebeeck Avenue, Edenvale, Gauteng</p>
-    <p>📞 +27 11 555 1234</p>
-    <p>📧 info@fahrenheitseafood.co.za</p>
-    <form id="contact-form" name="home-contact" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your message has been sent.">
-      <input type="hidden" name="form-name" value="home-contact">
-      <input type="text" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
-      <input type="email" name="email" autocomplete="email" placeholder="Your Email" aria-label="Your email" required>
-      <textarea name="message" placeholder="Your Message" rows="4" aria-label="Your message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
       <p data-form-status role="status" aria-live="polite"></p>
     </form>
   </section>

@@ -11,16 +11,35 @@ Student Number: ST10506754
 
 The site presents the restaurant's seafood menu, gallery, contact details, reservation form, and enquiry form.
 
-## Files
+## Project Structure
 
-- `index.html` — home page, menu, gallery, FAQs, reservation, and contact form
-- `contact.html` — contact details, contact form, and embedded map
-- `enquiry.html` — enquiry form
-- `style.css` — responsive styling and reduced-motion-aware transitions
-- `script.js` — menu loading/search, form submission, FAQ accordion, lightbox, and reveal animations
-- `menu.json` — menu content
-- `robots.txt` — allows search crawlers to read the pages' no-index instructions
-- `Images/` — optimized restaurant and menu images
+```text
+assets/
+  css/
+    style.css
+  images/
+    calamari_rings.jpg
+    chef_preparing.jpg
+    grilled_salmon.jpg
+    hero.jpg
+    restaurant_interior.jpg
+    seafood_platter.jpg
+    calamari_rings.svg
+    chef_preparing.svg
+    grilled_salmon.svg
+    hero.svg
+    restaurant_interior.svg
+    seafood_platter.svg
+  js/
+    script.js
+contact.html
+enquiry.html
+index.html
+menu.json
+robots.txt
+```
+
+`index.html` contains the home page, menu, gallery, FAQs, and reservation form. Contact details, the contact form, and embedded map are on `contact.html`; the enquiry form is on `enquiry.html`.
 
 ## Functionality
 
@@ -35,7 +54,7 @@ The site presents the restaurant's seafood menu, gallery, contact details, reser
 
 ## Link-Only Sharing
 
-The Netlify production site is publicly accessible to anyone who has its URL. Each page and Netlify response asks search engines not to index it, and no sitemap is published. This reduces the chance of people finding it through search, but it does not restrict access: anyone who receives or forwards the link can open the site. Use Netlify password protection or account-based access if access must be limited.
+The Netlify production site is publicly accessible to anyone who has its URL. Each page asks search engines not to index it, and no sitemap is published. This reduces the chance of people finding it through search, but it does not restrict access: anyone who receives or forwards the link can open the site. Use Netlify password protection or account-based access if access must be limited.
 
 ## Forms and Deployment
 
@@ -43,9 +62,15 @@ The site is hosted on Netlify. Netlify Forms receives reservation, contact, and 
 
 Menu loading uses `fetch`, so run the site through a web server or the deployed site rather than opening `index.html` directly as a `file:` URL.
 
-## Run the Website on Windows
+## Run the Website Locally
 
-Double-click `START WEBSITE.bat` to start a local web server and open the site in your browser. Keep the command window open while using the website; press Ctrl+C in that window to stop the server. Python 3 must be installed and available through the Windows `py` launcher.
+From the project root, start a local server:
+
+```sh
+py -m http.server 8000
+```
+
+Open <http://localhost:8000> in a browser. Keep the terminal open while using the site; press Ctrl+C to stop the server. Python 3 must be installed and available through the `py` launcher.
 
 ## Technologies
 
@@ -55,6 +80,13 @@ Double-click `START WEBSITE.bat` to start a local web server and open the site i
 - JSON
 - Netlify Forms
 - Google Maps embed
+
+## References
+
+- Google Maps Platform, “Get started with Google Maps URLs.” <https://developers.google.com/maps/documentation/urls/get-started>
+- Netlify Docs, “Set up forms.” <https://docs.netlify.com/forms/setup/>
+
+Image attribution details for files in `assets/images/` were not recorded in the repository. Verify the original creators, sources, and licences and add citations here before submission if any assets are externally sourced.
 
 ## Deployment
 

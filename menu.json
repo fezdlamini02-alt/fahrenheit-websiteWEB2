@@ -4,7 +4,7 @@
     "category": "Seafood",
     "price": 250,
     "description": "Fresh prawns, mussels, and calamari.",
-    "image": "Images/seafood_platter.jpg",
+    "image": "assets/images/seafood_platter.jpg",
     "alt": "Seafood platter served at the restaurant"
   },
   {
@@ -12,7 +12,7 @@
     "category": "Seafood",
     "price": 180,
     "description": "Served with seasonal vegetables.",
-    "image": "Images/grilled_salmon.jpg",
+    "image": "assets/images/grilled_salmon.jpg",
     "alt": "Grilled salmon served with seasonal vegetables"
   },
   {
@@ -20,7 +20,7 @@
     "category": "Seafood",
     "price": 120,
     "description": "Crispy golden calamari with tartar sauce.",
-    "image": "Images/calamari_rings.jpg",
+    "image": "assets/images/calamari_rings.jpg",
     "alt": "Golden calamari rings served with tartar sauce"
   }
 ]
