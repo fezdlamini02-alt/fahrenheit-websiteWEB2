@@ -14,3 +14,4 @@ Notable changes to the Fahrenheit Seafood and Grill website are recorded here.
 - Restored the JavaScript file at the project root and updated page references and documentation.
 - Added a prefilled email fallback when online form submission fails and documented the Netlify form-detection setup.
 - Replaced the unreliable Google Maps embed with an OpenStreetMap embed centered on the Edenvale address, retaining Google Maps directions as a fallback.
+- Documented the confirmed Netlify form-detection setup step and verification procedure for the live submission endpoint.
