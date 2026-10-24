@@ -20,21 +20,22 @@
         <li><a href="index.html#gallery">Gallery</a></li>
         <li><a href="index.html#reservation">Reservations</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="enquiry.html">Enquiries</a></li>
+        <li><a href="enquiry.html" aria-current="page">Enquiries</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="contact page-form">
-    <h2>Make an Enquiry</h2>
+  <main class="contact page-form" aria-labelledby="enquiry-heading">
+    <h2 id="enquiry-heading">Make an Enquiry</h2>
     <p>Tell us what you would like to know about our food, services, or sponsorship opportunities.</p>
     <form name="enquiry" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your enquiry has been sent.">
       <input type="hidden" name="form-name" value="enquiry">
       <label for="enquiry-name">Your name</label>
-      <input id="enquiry-name" name="name" type="text" autocomplete="name" required>
+      <input id="enquiry-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required>
 
       <label for="enquiry-email">Email address</label>
-      <input id="enquiry-email" name="email" type="email" autocomplete="email" required>
+      <input id="enquiry-email" name="email" type="email" autocomplete="email" maxlength="254" aria-describedby="enquiry-email-hint" required>
+      <p id="enquiry-email-hint">We will use your email address to reply to your enquiry.</p>
 
       <label for="enquiry-type">Enquiry type</label>
       <select id="enquiry-type" name="enquiryType" required>
@@ -46,7 +47,8 @@
       </select>
 
       <label for="enquiry-message">How can we help?</label>
-      <textarea id="enquiry-message" name="message" rows="5" required></textarea>
+      <textarea id="enquiry-message" name="message" rows="5" minlength="10" maxlength="2000" aria-describedby="enquiry-message-hint" required></textarea>
+      <p id="enquiry-message-hint">Please enter at least 10 characters (up to 2,000).</p>
 
       <button type="submit" class="btn">Send Enquiry</button>
       <p data-form-status role="status" aria-live="polite"></p>
