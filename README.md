@@ -55,7 +55,7 @@ The Netlify production site is publicly accessible to anyone who has its URL. Ea
 
 ## Forms and Deployment
 
-The site is hosted on Netlify. Reservation, contact, and enquiry forms submit through Netlify Forms only after form detection is enabled for the site. A live submission check returned HTTP 404, which means online form delivery is not currently verified. To enable it, sign in to the [Netlify Forms settings](https://app.netlify.com/sites/fahrenheit-websiteweb/forms), open **Form detection**, enable detection, and redeploy the site. Then submit a clearly labeled test and confirm it appears under the site's **Forms** dashboard. If online submission fails, each form offers a prefilled email link as a fallback; this requires an email application configured on the visitor's device. Forms cannot be delivered to Netlify from a local static server.
+The site is hosted on Netlify. Reservation, contact, and enquiry forms are detected by Netlify at deploy time. Netlify removes the `data-netlify` attribute from deployed form HTML, so the client script identifies configured forms using their hidden `form-name` field and POST method. If online submission fails, each form offers a prefilled email link as a fallback; this requires an email application configured on the visitor's device. Forms cannot be delivered to Netlify from a local static server.
 
 Menu loading uses `fetch`, so run the site through a web server or the deployed site rather than opening `index.html` directly as a `file:` URL.
 

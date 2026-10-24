@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitButton = form.querySelector('[type="submit"]');
       const formName = form.querySelector('[name="form-name"]')?.value;
 
-      if (!formName || !form.hasAttribute('data-netlify')) {
+      if (!formName || form.method.toLowerCase() !== 'post') {
         if (status) status.textContent = 'This form is not configured for online submission.';
         console.error('Form submission is missing its Netlify form configuration.');
         return;
