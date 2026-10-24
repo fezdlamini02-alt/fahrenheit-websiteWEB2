@@ -2,19 +2,26 @@ Fahrenheit Seafood and Grill Website
 
 Author: Mbali Dlamini
 Student Number: ST10506754
+Module: WEDE Part 2
 
 Project Description:
-This website was created for Fahrenheit Seafood and Grill as part of the WEDE Part 2 assignment. The project focuses on designing a modern, visually appealing restaurant landing page using HTML and CSS. It includes a hero section, restaurant imagery, service highlights, and branding elements that reflect a seafood dining experience.
+This responsive multi-page website promotes Fahrenheit Seafood and Grill. It presents the restaurant's menu, dining experience, contact information, reservations, and enquiry options.
+
+Pages and Features:
+- index.html: restaurant landing page, searchable menu, photo gallery, FAQs, and reservation form
+- contact.html: contact details, contact form, and location map
+- enquiry.html: categorized enquiry form
+- Shared responsive styling and JavaScript interactions
+- Netlify Forms integration for online form submissions
 
 Technologies Used:
-- HTML
-- CSS
-- Images for branding and restaurant visuals
+- HTML, CSS, JavaScript, and JSON
+- Netlify Forms
+- Google Maps embed
+- Real photographs credited under their respective reuse licences in README.md
 
 Project Aim:
-To create a responsive and professional restaurant website that effectively promotes the brand and showcases the dining experience.
+To provide a professional and accessible online presence for the restaurant, with clear information and usable forms across desktop and mobile devices.
 
-Submission Details:
-- Module: WEDE Part 2
-- Student: Mbali Dlamini
-- Student Number: ST10506754
+Submission Documentation:
+See README.md for the project structure, setup instructions, deployment details, references, and complete image credits.

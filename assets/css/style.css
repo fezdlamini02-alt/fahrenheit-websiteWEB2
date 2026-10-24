@@ -67,7 +67,7 @@ nav a:focus-visible {
    HERO SECTION
 ================================= */
 .hero {
-  background: url('../images/hero.jpg') no-repeat center center/cover;
+  background: url('../images/hero-photo.jpg') no-repeat center center/cover;
   height: 400px;
   display: flex;
   align-items: center;
@@ -104,9 +104,17 @@ nav a:focus-visible {
 
 .menu-search,
 #menu-search,
+.menu-note,
 .menu-empty,
 .menu-status {
   grid-column: 1 / -1;
+}
+
+.menu-note,
+.gallery-note {
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 #menu-search {
@@ -173,6 +181,10 @@ button:hover, .btn:hover {
 }
 
 .gallery .section-heading {
+  grid-column: 1 / -1;
+}
+
+.gallery-note {
   grid-column: 1 / -1;
 }
 
