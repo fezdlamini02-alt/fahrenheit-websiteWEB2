@@ -49,9 +49,9 @@ WEDE PART 2
 - Navigation, button, gallery, and section reveal transitions include reduced-motion support.
 - Non-critical images load lazily; image assets are resized and recompressed where that reduces file size.
 
-## Link-Only Sharing
+## Search Engine Visibility
 
-The Netlify production site is publicly accessible to anyone who has its URL. Each page asks search engines not to index it, and no sitemap is published. This reduces the chance of people finding it through search, but it does not restrict access: anyone who receives or forwards the link can open the site. Use Netlify password protection or account-based access if access must be limited.
+The public Netlify site allows search engines to index its pages. The homepage includes a canonical URL, social-sharing metadata, and Restaurant structured data; `robots.txt` points crawlers to `sitemap.xml`. Search engines may take time to crawl and display updated pages. To request indexing sooner, verify the site in Google Search Console or Bing Webmaster Tools and submit the sitemap.
 
 ## Forms and Deployment
 
