@@ -8,12 +8,17 @@
   <meta name="theme-color" content="#008080">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fahrenheit-websiteweb.netlify.app/">
-  <meta property="og:type" content="restaurant">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fahrenheit Seafood and Grill">
   <meta property="og:locale" content="en_ZA">
   <meta property="og:title" content="Fahrenheit Seafood and Grill | Seafood Restaurant in Edenvale">
   <meta property="og:description" content="Explore the menu and request a table at Fahrenheit Seafood and Grill in Edenvale, Gauteng.">
   <meta property="og:url" content="https://fahrenheit-websiteweb.netlify.app/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://fahrenheit-websiteweb.netlify.app/assets/images/hero-photo.jpg">
+  <meta property="og:image:alt" content="Illustrative seafood dining photograph; not a photograph of the restaurant.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fahrenheit-websiteweb.netlify.app/assets/images/hero-photo.jpg">
+  <meta name="twitter:image:alt" content="Illustrative seafood dining photograph; not a photograph of the restaurant.">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,74 +57,77 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h2 data-reveal>Fresh Seafood, Modern Dining</h2>
-  </section>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h2 data-reveal>Fresh Seafood, Modern Dining</h2>
+    </section>
 
-  <!-- MENU SECTION -->
-  <section id="menu" class="menu">
-    <h2 class="section-heading" data-reveal>Our Menu</h2>
-    <label class="menu-search" for="menu-search">Search the menu</label>
-    <input id="menu-search" data-menu-search type="search" placeholder="Search dishes or ingredients" aria-controls="menu-list">
-    <p class="menu-note">Photographs are illustrative; actual presentation may vary.</p>
-    <p class="menu-status" data-menu-status role="status" aria-live="polite">Loading menu...</p>
-    <p class="menu-empty" data-menu-empty hidden>No menu items match your search.</p>
-    <div id="menu-list" class="menu-list" data-menu-list aria-live="polite"></div>
-  </section>
+    <!-- MENU SECTION -->
+    <section id="menu" class="menu">
+      <h2 class="section-heading" data-reveal>Our Menu</h2>
+      <p class="menu-note">Visit us at 12 Van Riebeeck Avenue in Edenvale, Gauteng. <a href="contact.html">Get directions</a>.</p>
+      <label class="menu-search" for="menu-search">Search the menu</label>
+      <input id="menu-search" data-menu-search type="search" placeholder="Search dishes or ingredients" aria-controls="menu-list">
+      <p class="menu-note">Photographs are illustrative; actual presentation may vary.</p>
+      <p class="menu-status" data-menu-status role="status" aria-live="polite">Loading menu...</p>
+      <p class="menu-empty" data-menu-empty hidden>No menu items match your search.</p>
+      <div id="menu-list" class="menu-list" data-menu-list aria-live="polite"></div>
+    </section>
 
-  <!-- GALLERY SECTION -->
-  <section id="gallery" class="gallery">
-    <h2 class="section-heading" data-reveal>Gallery</h2>
-    <p class="gallery-note">These photographs are representative examples, not photographs of this restaurant.</p>
-    <button class="gallery-item" type="button" aria-label="View an example restaurant interior">
-      <img src="assets/images/interior-photo.jpg" alt="Example dining room at a restaurant in Luang Prabang" loading="lazy" decoding="async">
-    </button>
-    <button class="gallery-item" type="button" aria-label="View a chef preparing ingredients">
-      <img src="assets/images/chef-photo.jpg" alt="Chef preparing fresh ingredients at a kitchen counter" loading="lazy" decoding="async">
-    </button>
-    <button class="gallery-item" type="button" aria-label="View a seafood platter">
-      <img src="assets/images/platter-photo.jpg" alt="Seafood platter from Trennerys Hotel on South Africa's Wild Coast" loading="lazy" decoding="async">
-    </button>
-  </section>
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery">
+      <h2 class="section-heading" data-reveal>Gallery</h2>
+      <p class="gallery-note">These photographs are representative examples, not photographs of this restaurant.</p>
+      <button class="gallery-item" type="button" aria-label="View an example restaurant interior">
+        <img src="assets/images/interior-photo.jpg" alt="Example dining room at a restaurant in Luang Prabang" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-item" type="button" aria-label="View a chef preparing ingredients">
+        <img src="assets/images/chef-photo.jpg" alt="Chef preparing fresh ingredients at a kitchen counter" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-item" type="button" aria-label="View a seafood platter">
+        <img src="assets/images/platter-photo.jpg" alt="Seafood platter from Trennerys Hotel on South Africa's Wild Coast" loading="lazy" decoding="async">
+      </button>
+    </section>
 
-  <section id="faqs" class="faqs">
-    <h2 data-reveal>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <article class="faq-item">
-        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-hours">What are your opening hours?</button></h3>
-        <div class="faq-answer" id="faq-answer-hours" hidden>
-          <p>Please call us on <a href="tel:+27115551234">+27 11 555 1234</a> to confirm today's opening hours.</p>
-        </div>
-      </article>
-      <article class="faq-item">
-        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-booking">How do I book a table?</button></h3>
-        <div class="faq-answer" id="faq-answer-booking" hidden>
-          <p>Use the reservation form below. We will contact you to confirm your booking.</p>
-        </div>
-      </article>
-      <article class="faq-item">
-        <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-enquiries">Can I ask about events or sponsorship?</button></h3>
-        <div class="faq-answer" id="faq-answer-enquiries" hidden>
-          <p>Yes. Send the details through our <a href="enquiry.html">enquiry form</a>.</p>
-        </div>
-      </article>
-    </div>
-  </section>
+    <section id="faqs" class="faqs">
+      <h2 data-reveal>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-hours">What are your opening hours?</button></h3>
+          <div class="faq-answer" id="faq-answer-hours" hidden>
+            <p>Please call us on <a href="tel:+27115551234">+27 11 555 1234</a> to confirm today's opening hours.</p>
+          </div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-booking">How do I book a table?</button></h3>
+          <div class="faq-answer" id="faq-answer-booking" hidden>
+            <p>Use the reservation form below. We will contact you to confirm your booking.</p>
+          </div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="accordion" type="button" aria-expanded="false" aria-controls="faq-answer-enquiries">Can I ask about events or sponsorship?</button></h3>
+          <div class="faq-answer" id="faq-answer-enquiries" hidden>
+            <p>Yes. Send the details through our <a href="enquiry.html">enquiry form</a>.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <!-- RESERVATION SECTION -->
-  <section id="reservation" class="contact">
-    <h2>Make a Reservation</h2>
-    <form id="reservation-form" name="reservation" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your reservation request has been sent. We will contact you to confirm.">
-      <input type="hidden" name="form-name" value="reservation">
-      <input type="text" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
-      <input type="email" name="email" autocomplete="email" placeholder="Your Email" aria-label="Your email" required>
-      <input type="date" name="date" aria-label="Reservation date" data-no-past-date required>
-      <input type="time" name="time" aria-label="Reservation time" required>
-      <button type="submit" class="btn">Book Table</button>
-      <p data-form-status role="status" aria-live="polite"></p>
-    </form>
-  </section>
+    <!-- RESERVATION SECTION -->
+    <section id="reservation" class="contact">
+      <h2>Make a Reservation</h2>
+      <form id="reservation-form" name="reservation" method="POST" action="/" data-netlify="true" data-validated-form data-success-message="Thanks! Your reservation request has been sent. We will contact you to confirm.">
+        <input type="hidden" name="form-name" value="reservation">
+        <input type="text" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
+        <input type="email" name="email" autocomplete="email" placeholder="Your Email" aria-label="Your email" required>
+        <input type="date" name="date" aria-label="Reservation date" data-no-past-date required>
+        <input type="time" name="time" aria-label="Reservation time" required>
+        <button type="submit" class="btn">Book Table</button>
+        <p data-form-status role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>

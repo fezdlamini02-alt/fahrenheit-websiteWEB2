@@ -51,7 +51,7 @@ WEDE PART 2
 
 ## Search Engine Visibility
 
-The public Netlify site allows search engines to index its pages. The homepage includes a canonical URL, social-sharing metadata, and Restaurant structured data; `robots.txt` points crawlers to `sitemap.xml`. Search engines may take time to crawl and display updated pages. To request indexing sooner, verify the site in Google Search Console or Bing Webmaster Tools and submit the sitemap.
+The public Netlify site allows search engines to index its pages. Each page has a canonical URL and social-sharing metadata; the homepage also includes Restaurant structured data and a visible location. `robots.txt` points crawlers to `sitemap.xml`. Search engines may take time to crawl and display updated pages. To request indexing sooner, verify the site in Google Search Console or Bing Webmaster Tools and submit the sitemap.
 
 ## Forms and Deployment
 
